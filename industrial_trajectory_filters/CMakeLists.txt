@@ -27,3 +27,10 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 install(FILES planning_request_adapters_plugin_description.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+##########
+## Test ##
+##########
+catkin_add_gtest(utest_trajectory test/utest.cpp)
+target_link_libraries(utest_trajectory
+  ${catkin_LIBRARIES})

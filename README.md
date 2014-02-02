@@ -17,3 +17,5 @@ This repo holds source code for all versions > groovy. For those versions <= gro
 * Install this package to your workspace following the [standard procedure](http://wiki.ros.org/catkin/Tutorials/workspace_overlaying). 
 * This package depends on MoveIT. On Ubuntu install it with  sudo apt-get install ros-hydro-moveit-full or your favorite package manager.
 * For unit tests you will need [googletest](https://code.google.com/p/googletest/) which installs easily using cmake. 
+* For additional assistance with unit tests this is a [helpful resource](http://www.thebigblob.com/getting-started-with-google-test-on-ubuntu/). 
+* Run the tests with catkin_make run_tests_industrial_trajectory_filters_gtest_utest_trajectory
