@@ -43,8 +43,6 @@ template<typename T>
   {
     ROS_INFO_STREAM("Constructing N point filter");
     sample_duration_ = DEFAULT_SAMPLE_DURATION;
-    this->filter_name_ = "UniformSampleFilter";
-    this->filter_type_ = "UniformSampleFilter";
   }
 
 template<typename T>
@@ -55,12 +53,14 @@ template<typename T>
 template<typename T>
   bool UniformSampleFilter<T>::configure()
   {
+    //FLAG
+    /*
     if (!this->nh_.getParam("sample_duration", sample_duration_))
     {
       ROS_WARN_STREAM( "UniformSampleFilter, params has no attribute sample_duration.");
     }
     ROS_INFO_STREAM("Using a sample_duration value of " << sample_duration_);
-
+    */
     return true;
   }
 
@@ -79,7 +79,7 @@ template<typename T>
 
     // Clear out the trajectory points
     trajectory_out.request.trajectory.points.clear();
-
+ 
     while (interpolated_time < duration_in)
     {
       ROS_INFO_STREAM("Interpolated time: " << interpolated_time);
@@ -213,8 +213,8 @@ template<typename T>
   }
 
 // registering planner adapter
-CLASS_LOADER_REGISTER_CLASS( industrial_trajectory_filters::UniformSampleFilterAdapter,
-                            planning_request_adapter::PlanningRequestAdapter);
+//CLASS_LOADER_REGISTER_CLASS( industrial_trajectory_filters::UniformSampleFilterAdapter,
+//                            planning_request_adapter::PlanningRequestAdapter);
 
 /*
  * Old plugin declaration for arm navigation trajectory filters

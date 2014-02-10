@@ -43,8 +43,6 @@ template<typename T>
   {
     ROS_INFO_STREAM("Constructing N point filter");
     n_points_ = DEFAULT_N;
-    this->filter_name_ = "NPointFilter";
-    this->filter_type_ = "NPointFilter";
   }
 
 template<typename T>
@@ -56,7 +54,8 @@ template<typename T>
   bool NPointFilter<T>::configure()
   {
     //if (!filters::FilterBase<T>::getParam("n_points", n_points_))
-    if (!this->nh_.getParam("n_points", n_points_))
+    // FLAG Move this out of the class
+    /*    if (!this->nh_.getParam("n_points", n_points_))
     {
       ROS_WARN_STREAM("NPointFilter, params has no attribute n_points.");
     }
@@ -66,9 +65,9 @@ template<typename T>
       n_points_ = 2;
     }
     ROS_INFO_STREAM("Using a n_points value of " << n_points_);
-
+    */
     return true;
-  }
+    }
 
 template<typename T>
   bool NPointFilter<T>::update(const T& trajectory_in, T& trajectory_out)
@@ -123,14 +122,9 @@ template<typename T>
   }
 
 // registering planner adapter
-CLASS_LOADER_REGISTER_CLASS(industrial_trajectory_filters::NPointFilterAdapter,
-                            planning_request_adapter::PlanningRequestAdapter);
+//CLASS_LOADER_REGISTER_CLASS(industrial_trajectory_filters::NPointFilterAdapter,
+//                            planning_request_adapter::PlanningRequestAdapter);
 
 /*
- * Old plugin declaration for arm navigation trajectory filters
- PLUGINLIB_DECLARE_CLASS(industrial_trajectory_filters,
- IndustrialNPointFilterJointTrajectoryWithConstraints,
- industrial_trajectory_filters::NPointFilter<arm_navigation_msgs::FilterJointTrajectoryWithConstraints>,
- filters::FilterBase<arm_navigation_msgs::FilterJointTrajectoryWithConstraints>);
 
  */

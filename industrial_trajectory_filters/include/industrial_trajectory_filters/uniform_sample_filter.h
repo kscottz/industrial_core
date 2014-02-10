@@ -64,7 +64,15 @@ template<typename T>
      */
     ~UniformSampleFilter();
 
+    //virtual std::string getFilterType(void);
+
+
+    /**
+     *
+     *
+     **/
     virtual bool configure();
+
 
     /**
      * Uniformly samples(in terms of time) the input trajectory based upon the
