@@ -69,7 +69,7 @@ template<typename T>
      * @param trajectory_out filtered trajectory (N points or less
      * @return true if successful
      */
-    bool update(const T& trajectory_in, T& trajectory_out);
+    bool update(const T& data_in, T& data_out);
 
   private:
     /**

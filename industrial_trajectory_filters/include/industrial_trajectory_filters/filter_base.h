@@ -204,14 +204,16 @@ template<typename T>
      * @brief Return description string
      * @return description (as a string)
      */
+
     virtual std::string getDescription() const
     {
       // non const pointer to this
-      FilterBase<MessageAdapter> *p = const_cast<FilterBase<MessageAdapter>*>(this);
+      //      FilterBase<MessageAdapter> *p = const_cast<FilterBase<MessageAdapter>*>(this);
 
-      std::stringstream ss;
-      ss << "Trajectory filter '" << p->getName() << "' of type '" << p->getType() << "'";
-      return ss.str();
+      //std::stringstream ss;
+      //ss << "Trajectory filter '" << p->getName() << "' of type '" << p->getType() << "'";
+      //return ss.str();
+      return "";
     }
   };
 

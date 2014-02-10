@@ -164,7 +164,7 @@ struct MessageAdapter
     }
     ; // original FilterBase method
 
-
+    
  protected:
 
     /**
@@ -267,5 +267,10 @@ struct MessageAdapter
   };
 
 }
+
+// KAT THIS NEEDS TO GO AT THE END OF IMPL
+// registering planner adapter
+//CLASS_LOADER_REGISTER_CLASS( industrial_trajectory_filters::UniformSampleFilterAdapter,
+//                            planning_request_adapter::PlanningRequestAdapter);
 
 #endif /* FILTER_BASE_H_ */

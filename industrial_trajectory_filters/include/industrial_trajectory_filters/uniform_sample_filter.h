@@ -66,6 +66,18 @@ template<typename T>
 
     //virtual std::string getFilterType(void);
 
+    /**
+     * @brief Original FilterBase method, return filter type
+     * @return filter type (as string)
+     */
+    virtual std::string getType();
+
+    /**
+     * @brief Original FitlerBase Method
+     * @return filter name (as string).
+     */
+    virtual inline const std::string& getName();
+    virtual std::string getDescription() const;
 
     /**
      *

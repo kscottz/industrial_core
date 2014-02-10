@@ -15,7 +15,9 @@ include_directories(include
 )
 
 
-add_library(${PROJECT_NAME} src/n_point_filter.cpp src/uniform_sample_filter.cpp)
+add_library(${PROJECT_NAME} src/n_point_filter.cpp src/uniform_sample_filter.cpp
+  include/industrial_trajectory_filters/filter_adapter.h
+  include/industrial_trajectory_filters/filter_base.h)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
 
@@ -32,5 +34,5 @@ install(FILES planning_request_adapters_plugin_description.xml
 ## Test ##
 ##########
 catkin_add_gtest(utest_trajectory test/utest.cpp)
-target_link_libraries(utest_trajectory
-  ${catkin_LIBRARIES})
+target_link_libraries(utest_trajectory ${PROJECT_NAME} ${catkin_LIBRARIES})
+

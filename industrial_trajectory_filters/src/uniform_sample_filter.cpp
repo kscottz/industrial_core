@@ -65,7 +65,8 @@ template<typename T>
   }
 
 template<typename T>
-  bool UniformSampleFilter<T>::update(const T& trajectory_in, T& trajectory_out)
+//bool UniformSampleFilter<T>::update(const T& trajectory_in, T& trajectory_out)
+bool UniformSampleFilter<T>::update(const T& trajectory_in, T& trajectory_out)
   {
     bool success = false;
     size_t size_in = trajectory_in.request.trajectory.points.size();
