@@ -15,9 +15,7 @@ include_directories(include
 )
 
 
-add_library(${PROJECT_NAME} src/n_point_filter.cpp src/uniform_sample_filter.cpp
-  include/industrial_trajectory_filters/filter_adapter.h
-  include/industrial_trajectory_filters/filter_base.h)
+add_library(${PROJECT_NAME} src/n_point_filter.cpp src/uniform_sample_filter.cpp include/industrial_trajectory_filters/filter_adapter.h include/industrial_trajectory_filters/filter_base.h)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
 
